@@ -4,14 +4,14 @@ import { SparkCoreAngularModule } from "@sparkdesignsystem/spark-core-angular";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './modules/homepage/homepage.component';
+import { HomepageComponent } from './homepage/homepage.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SparkModule } from './spark.module';
-import { HomepageItemComponent } from './modules/homepage/homepage-item/homepage-item.component';
-import { HomepageItemOneComponent } from './modules/homepage/homepage-item/homepage-item-one/homepage-item-one.component';
-import { HomepageItemTwoComponent } from './modules/homepage/homepage-item/homepage-item-two/homepage-item-two.component';
-import { HomepageItemThreeComponent } from './modules/homepage/homepage-item/homepage-item-three/homepage-item-three.component';
-import { HomepageItemFourComponent } from './modules/homepage/homepage-item/homepage-item-four/homepage-item-four.component';
+import { HomepageItemComponent } from './homepage/homepage-item/homepage-item.component';
+import { HomepageItemOneComponent } from './homepage/homepage-item/homepage-item-one/homepage-item-one.component';
+import { HomepageItemTwoComponent } from './homepage/homepage-item/homepage-item-two/homepage-item-two.component';
+import { HomepageItemThreeComponent } from './homepage/homepage-item/homepage-item-three/homepage-item-three.component';
+import { HomepageItemFourComponent } from './homepage/homepage-item/homepage-item-four/homepage-item-four.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomepageComponent }
