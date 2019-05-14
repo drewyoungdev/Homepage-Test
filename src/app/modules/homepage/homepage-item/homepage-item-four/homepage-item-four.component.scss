@@ -1,0 +1,21 @@
+.skeleton-screen-header,
+.skeleton-screen-body,
+.main-content {
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    border-radius: 4px;
+    background-color: whitesmoke;
+}
+
+.skeleton-screen-header {
+    width: 250px;
+    height: 30px;
+}
+
+.skeleton-screen-body,
+.main-content {
+    width: 95%;
+    height: 250px;
+}

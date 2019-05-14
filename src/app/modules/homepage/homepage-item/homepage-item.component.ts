@@ -1,11 +1,15 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-homepage-item',
   templateUrl: './homepage-item.component.html',
-  styleUrls: ['./homepage-item.component.scss']
+  styleUrls: ['./homepage-item.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomepageItemComponent implements OnInit {
+  // override with title of homepage item
+  title: string = 'Homepage Item';
+
   // determines if skeleton screen should display
   isLoading: boolean = true;
 
@@ -14,7 +18,7 @@ export class HomepageItemComponent implements OnInit {
 
   // tells parent component that we are done
   @Output() completedEvent = new EventEmitter();
-  
+
   constructor() { }
 
   ngOnInit() {

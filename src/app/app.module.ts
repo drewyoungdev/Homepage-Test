@@ -8,6 +8,10 @@ import { HomepageComponent } from './modules/homepage/homepage.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SparkModule } from './spark.module';
 import { HomepageItemComponent } from './modules/homepage/homepage-item/homepage-item.component';
+import { HomepageItemOneComponent } from './modules/homepage/homepage-item/homepage-item-one/homepage-item-one.component';
+import { HomepageItemTwoComponent } from './modules/homepage/homepage-item/homepage-item-two/homepage-item-two.component';
+import { HomepageItemThreeComponent } from './modules/homepage/homepage-item/homepage-item-three/homepage-item-three.component';
+import { HomepageItemFourComponent } from './modules/homepage/homepage-item/homepage-item-four/homepage-item-four.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomepageComponent }
@@ -17,7 +21,11 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomepageComponent,
-    HomepageItemComponent
+    HomepageItemComponent,
+    HomepageItemOneComponent,
+    HomepageItemTwoComponent,
+    HomepageItemThreeComponent,
+    HomepageItemFourComponent
   ],
   imports: [
     BrowserModule,
