@@ -1,10 +1,17 @@
-<sprk-stack splitAt="tiny">
+<div [hidden]="!showPreloader">
+  <div class="preloader"></div>
+</div>
+<sprk-stack [hidden]="showPreloader" splitAt="tiny">
   <div
     sprkStackItem
     class="sprk-o-Stack__item--three-fifths@xs">
+    <app-homepage-item (completedEvent)="onCompletion($event)"></app-homepage-item>
+    <app-homepage-item (completedEvent)="onCompletion($event)"></app-homepage-item>
   </div>
   <div
     sprkStackItem
     class="sprk-o-Stack__item--two-fifths@xs">
+    <app-homepage-item (completedEvent)="onCompletion($event)"></app-homepage-item>
+    <app-homepage-item (completedEvent)="onCompletion($event)"></app-homepage-item>
   </div>
 </sprk-stack>

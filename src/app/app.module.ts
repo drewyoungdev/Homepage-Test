@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './modules/homepage/homepage.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SparkModule } from './spark.module';
+import { HomepageItemComponent } from './modules/homepage/homepage-item/homepage-item.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomepageComponent }
@@ -15,7 +16,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent
+    HomepageComponent,
+    HomepageItemComponent
   ],
   imports: [
     BrowserModule,
