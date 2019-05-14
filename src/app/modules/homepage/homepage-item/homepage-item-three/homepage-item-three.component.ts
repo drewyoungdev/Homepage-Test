@@ -11,9 +11,13 @@ export class HomepageItemThreeComponent extends HomepageItemComponent implements
   constructor() {
     super();
     this.title = 'Homepage Item Three'
+    this.isMainHomepageItem = true;
   }
 
   ngOnInit() {
-    super.ngOnInit();
+    var that = this;
+    setTimeout(function () {
+      that.completed()
+    }, Math.floor(Math.random() * (10000 - 1000 + 1000)) + 1000);
   }
 }

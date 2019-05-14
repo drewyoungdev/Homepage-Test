@@ -14,6 +14,9 @@ export class HomepageItemTwoComponent extends HomepageItemComponent implements O
   }
 
   ngOnInit() {
-    super.ngOnInit();
+    var that = this;
+    setTimeout(function () {
+      that.completed()
+    }, Math.floor(Math.random() * (10000 - 1000 + 1000)) + 1000);
   }
 }
