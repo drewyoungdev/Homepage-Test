@@ -22,6 +22,6 @@ export class HomepageItemComponent implements OnInit {
     setTimeout(function () {
       that.isLoading = false;
       that.completedEvent.emit(Math.random());
-    }, Math.floor(Math.random() * (5000 - 1000 + 1000)) + 1000);
+    }, Math.floor(Math.random() * (10000 - 1000 + 1000)) + 1000);
   }
 }

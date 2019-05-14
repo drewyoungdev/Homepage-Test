@@ -10,7 +10,8 @@ export class HomepageComponent implements OnInit {
 
   // display preloader until at least "x" homepage items complete
   completedHomepageItems: number = 0;
-  requiredCompletedHomepageItems: number = 3;
+  // may need a requiredHomepageItemsLeft and requiredHomepageItemsRight
+  requiredCompletedHomepageItems: number = 1;
 
   constructor() { }
 
