@@ -1,19 +1,28 @@
 <div [hidden]="!showPreloader">
   <div class="preloader"></div>
 </div>
-<sprk-stack [hidden]="showPreloader" splitAt="tiny">
-  <div
-    sprkStackItem
-    style="padding-right:16px"
-    class="sprk-o-Stack__item--three-fifths@xs">
-    <app-homepage-item (completedEvent)="onCompletion($event)"></app-homepage-item>
-    <app-homepage-item (completedEvent)="onCompletion($event)"></app-homepage-item>
+<sprk-stack [hidden]="showPreloader">
+  <div sprkStackItem>
+    <h1 class="sprk-b-TypeDisplayTwo sprk-b-PageTitle sprk-u-mbl">
+      Your Dashboard
+    </h1>
   </div>
-  <div
-    sprkStackItem
-    style="padding-left:16px"
-    class="sprk-o-Stack__item--two-fifths@xs">
-    <app-homepage-item (completedEvent)="onCompletion($event)"></app-homepage-item>
-    <app-homepage-item (completedEvent)="onCompletion($event)"></app-homepage-item>
+  <div sprkStackItem>
+    <sprk-stack splitAt="tiny">
+      <div
+        sprkStackItem
+        style="padding-right:16px"
+        class="sprk-o-Stack__item--three-fifths@xs">
+        <app-homepage-item (completedEvent)="onCompletion($event)"></app-homepage-item>
+        <app-homepage-item (completedEvent)="onCompletion($event)"></app-homepage-item>
+      </div>
+      <div
+        sprkStackItem
+        style="padding-left:16px"
+        class="sprk-o-Stack__item--two-fifths@xs">
+        <app-homepage-item (completedEvent)="onCompletion($event)"></app-homepage-item>
+        <app-homepage-item (completedEvent)="onCompletion($event)"></app-homepage-item>
+      </div>
+    </sprk-stack>
   </div>
 </sprk-stack>
