@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomepageItemComponent } from '../homepage-item.component';
-import { HomepageItemTwoService } from '../../services/homepage-item-two.service';
+import { HomepageItemService } from '../../services/homepage-item.service';
 
 @Component({
   selector: 'app-homepage-item-two',
@@ -9,13 +9,13 @@ import { HomepageItemTwoService } from '../../services/homepage-item-two.service
 })
 export class HomepageItemTwoComponent extends HomepageItemComponent implements OnInit {
 
-  constructor(private homepageItemTwoService: HomepageItemTwoService) {
+  constructor(private homepageItemService: HomepageItemService) {
     super();
     this.title = 'Homepage Item Two'
   }
 
   ngOnInit() {
-    this.homepageItemTwoService.get()
+    this.homepageItemService.getTwo()
       .subscribe(x => {
         this.completed();
       });
