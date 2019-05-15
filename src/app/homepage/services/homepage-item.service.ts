@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { delay } from "rxjs/operators";
+import { Observable, of, throwError } from 'rxjs';
+import { delay, concat } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,7 @@ export class HomepageItemService {
 
   // main homepage item
   getOne(): Observable<boolean> {
+    //return throwError(new Error());
     return of(true)
       .pipe(
         // delay(Math.floor(Math.random() * (10000 - 1000 + 1000)) + 1000)
@@ -19,6 +20,7 @@ export class HomepageItemService {
   }
 
   getTwo(): Observable<boolean> {
+    //return throwError(new Error());
     return of(true)
       .pipe(
         // delay(Math.floor(Math.random() * (10000 - 1000 + 1000)) + 1000)
@@ -28,6 +30,7 @@ export class HomepageItemService {
 
   // main homepage item
   getThree(): Observable<boolean> {
+    //return throwError(new Error());
     return of(true)
       .pipe(
         // delay(Math.floor(Math.random() * (10000 - 1000 + 1000)) + 1000)
@@ -36,6 +39,7 @@ export class HomepageItemService {
   }
 
   getFour(): Observable<boolean> {
+    //return throwError(new Error());
     return of(true)
       .pipe(
         // delay(Math.floor(Math.random() * (10000 - 1000 + 1000)) + 1000)

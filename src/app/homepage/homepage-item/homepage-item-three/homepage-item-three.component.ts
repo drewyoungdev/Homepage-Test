@@ -17,8 +17,14 @@ export class HomepageItemThreeComponent extends HomepageItemComponent implements
 
   ngOnInit() {
     this.homepageItemService.getThree()
-      .subscribe(x => {
-        this.completed();
-      });
+      .subscribe(
+        data => {
+          this.completed();
+        },
+        err => {
+          this.hasError = true;
+          this.completed();
+        }
+      );
   }
 }

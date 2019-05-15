@@ -16,8 +16,14 @@ export class HomepageItemFourComponent extends HomepageItemComponent implements 
 
   ngOnInit() {
     this.homepageItemService.getFour()
-      .subscribe(x => {
-        this.completed();
-      });
+      .subscribe(
+        data => {
+          this.completed();
+        },
+        err => {
+          this.hasError = true;
+          this.completed();
+        }
+      );
   }
 }

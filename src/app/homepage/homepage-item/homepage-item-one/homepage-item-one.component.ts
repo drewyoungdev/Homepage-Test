@@ -16,8 +16,14 @@ export class HomepageItemOneComponent extends HomepageItemComponent implements O
 
   ngOnInit() {
     this.homepageItemService.getOne()
-      .subscribe(x => {
+    .subscribe(
+      data => {
         this.completed();
-      });
+      },
+      err => {
+        this.hasError = true;
+        this.completed();
+      }
+    );
   }
 }

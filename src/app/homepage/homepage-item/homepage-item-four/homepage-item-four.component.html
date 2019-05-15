@@ -10,8 +10,13 @@
           </h3>
       </div>
       <div *ngIf="isLoading" class="skeleton-screen-body"></div>
-      <div *ngIf="!isLoading" class="sprk-o-Box--large main-content">
-        Main Content
+      <div *ngIf="!isLoading">
+        <div *ngIf="!hasError" class="sprk-o-Box--large main-content">
+            Main Content
+        </div>
+        <div *ngIf="hasError" class="sprk-o-Box--large main-content">
+            Error Content
+        </div>
       </div>
     </div>
 </sprk-card>
