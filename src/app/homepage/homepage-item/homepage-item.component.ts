@@ -1,11 +1,16 @@
-import { Component, OnInit, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { HomepageItemCompletedEvent } from '../models/homepage-item-completed-event';
 
+/*
+Summary
+Base component to provide all components with inherited properties that allows the parent
+Once the component extending this Base component is completed, it should call
+the completed() method to notify the parent component it is complete.
+*/
 @Component({
   selector: 'app-homepage-item',
   templateUrl: './homepage-item.component.html',
-  styleUrls: ['./homepage-item.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./homepage-item.component.scss']
 })
 export class HomepageItemComponent {
   // override with title of homepage item

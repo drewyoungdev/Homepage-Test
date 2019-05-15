@@ -1,6 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { HomepageItemCompletedEvent } from './models/homepage-item-completed-event';
 
+/*
+Summary
+Depending on the requirements this component may not have any logic.
+This component is here to ORCHESTRATE all of the homepage item components.
+We HAVE the option to pivot off of the triggered events to manage our homepage items if we decide.
+This parent component just gives us the flexibility to apply uniform handling of homepage items.
+For example:
+ - Show the preloader until some condition is met by all homepage items
+ - Highlight homepage item with red if hasError is true
+ - Have specific Failure Reason Codes to apply generic styling to homepage item
+ - Remove homepage item completely if hideHomepage returned as true.
+ - etc. etc.
+*/
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -18,14 +31,9 @@ export class HomepageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // if no items loaded all errored out, then display error page/banner
-    // ^ above may not be necessary if it is agreed that the homepage should always display some sort of content
-    // even if it is just to direct the client elsewhere when homepage items api requests all fail
   }
 
   onCompletion($event: HomepageItemCompletedEvent) {
-    console.log($event);
-
     if ($event.isMainHomepageItem) {
       this.completedHomepageItems++;
     }

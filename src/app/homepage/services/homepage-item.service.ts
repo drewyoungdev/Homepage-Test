@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, concat } from "rxjs/operators";
 
+/*
+Summary
+Provides all HTTP calls for homepage items
+*/
 @Injectable({
   providedIn: 'root'
 })
