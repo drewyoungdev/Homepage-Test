@@ -12,6 +12,10 @@ export class HomepageItemOneComponent extends HomepageItemComponent implements O
     super();
     this.title = 'Homepage Item One';
     this.isMainHomepageItem = true;
+    this.position = {
+      columnNumber: 1,
+      rowNumber: 1
+    }
   }
 
   ngOnInit() {

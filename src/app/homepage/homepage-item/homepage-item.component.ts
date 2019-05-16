@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { HomepageItemCompletedEvent } from '../models/homepage-item-completed-event';
+import { HomepageItemCompletedEvent, HomepageItemPosition } from '../models/homepage-item-completed-event';
 
 /*
 Summary
@@ -28,6 +28,9 @@ export class HomepageItemComponent {
   // allow parent component to determine if they should hide item or else we assume we have error content
   hideHomepageItem: boolean = false;
 
+  // allow parent component to determine if they should drive any view logic from their position
+  position: HomepageItemPosition;
+
   // tells parent component that we are done
   @Output() completedEvent = new EventEmitter<HomepageItemCompletedEvent>();
 
@@ -42,7 +45,8 @@ export class HomepageItemComponent {
         isMainHomepageItem: this.isMainHomepageItem,
         hasError: this.hasError,
         title: this.title,
-        hideHomepageItem: this.hideHomepageItem
+        hideHomepageItem: this.hideHomepageItem,
+        position: this.position
       }
     );
   }

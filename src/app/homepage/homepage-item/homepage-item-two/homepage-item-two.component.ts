@@ -12,6 +12,10 @@ export class HomepageItemTwoComponent extends HomepageItemComponent implements O
   constructor(private homepageItemService: HomepageItemService) {
     super();
     this.title = 'Homepage Item Two'
+    this.position = {
+      columnNumber: 1,
+      rowNumber: 2
+    }
   }
 
   ngOnInit() {

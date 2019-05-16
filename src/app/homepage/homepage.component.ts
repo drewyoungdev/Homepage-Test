@@ -26,7 +26,7 @@ export class HomepageComponent implements OnInit {
   completedHomepageItems: number = 0;
 
   // determine how many items must be loaded before preloader is hidden
-  requiredCompletedHomepageItems: number = 1;
+  requiredCompletedHomepageItems: number = 2;
 
   constructor() { }
 
@@ -34,7 +34,15 @@ export class HomepageComponent implements OnInit {
   }
 
   onCompletion($event: HomepageItemCompletedEvent) {
-    if ($event.isMainHomepageItem) {
+    console.log($event);
+
+    // only hide preloader if modules tagged as main module have completed
+    // if ($event.isMainHomepageItem) {
+    //   this.completedHomepageItems++;
+    // }
+
+    // only hide preloader if all items in row 1 load
+    if ($event.position.rowNumber == 1) {
       this.completedHomepageItems++;
     }
 

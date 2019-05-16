@@ -13,6 +13,10 @@ export class HomepageItemThreeComponent extends HomepageItemComponent implements
     super();
     this.title = 'Homepage Item Three'
     this.isMainHomepageItem = true;
+    this.position = {
+      columnNumber: 2,
+      rowNumber: 1
+    }
   }
 
   ngOnInit() {
