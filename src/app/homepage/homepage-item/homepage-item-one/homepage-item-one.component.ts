@@ -8,14 +8,9 @@ import { HomepageItemService } from '../../services/homepage-item.service';
   styleUrls: ['./homepage-item-one.component.scss']
 })
 export class HomepageItemOneComponent extends HomepageItemComponent implements OnInit {
+
   constructor(private homepageItemService: HomepageItemService) {
     super();
-    this.title = 'Homepage Item One';
-    this.isMainHomepageItem = true;
-    this.position = {
-      columnNumber: 1,
-      rowNumber: 1
-    }
   }
 
   ngOnInit() {

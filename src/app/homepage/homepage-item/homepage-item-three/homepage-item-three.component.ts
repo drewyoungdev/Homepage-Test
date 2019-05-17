@@ -11,12 +11,6 @@ export class HomepageItemThreeComponent extends HomepageItemComponent implements
 
   constructor(private homepageItemService: HomepageItemService) {
     super();
-    this.title = 'Homepage Item Three'
-    this.isMainHomepageItem = true;
-    this.position = {
-      columnNumber: 2,
-      rowNumber: 1
-    }
   }
 
   ngOnInit() {

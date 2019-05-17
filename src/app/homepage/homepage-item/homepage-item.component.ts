@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { HomepageItemCompletedEvent, HomepageItemPosition } from '../models/homepage-item-completed-event';
 
 /*
@@ -14,10 +14,16 @@ the completed() method to notify the parent component it is complete.
 })
 export class HomepageItemComponent {
   // override with title of homepage item
-  title: string = 'Homepage Item';
+  @Input() title: string = 'Homepage Item';
 
   // determines if component is a main homepage item
-  isMainHomepageItem: boolean = false;
+  @Input() isMainHomepageItem: boolean = false;
+
+  // allow parent component to determine if they should drive any view logic from their position
+  @Input() position: HomepageItemPosition;
+
+  // tells parent component that we are done
+  @Output() completedEvent = new EventEmitter<HomepageItemCompletedEvent>();
 
   // determines if skeleton screen should display
   isLoading: boolean = true;
@@ -27,12 +33,6 @@ export class HomepageItemComponent {
 
   // allow parent component to determine if they should hide item or else we assume we have error content
   hideHomepageItem: boolean = false;
-
-  // allow parent component to determine if they should drive any view logic from their position
-  position: HomepageItemPosition;
-
-  // tells parent component that we are done
-  @Output() completedEvent = new EventEmitter<HomepageItemCompletedEvent>();
 
   constructor() { }
 
