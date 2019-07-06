@@ -1,0 +1,24 @@
+<sprk-stack>
+  <div sprkStackItem>
+    <app-homepage-item-one
+    [title]="'Homepage Item One'"
+    [position]="{ columnNumber: 1, rowNumber: 1 }"
+    [isMainHomepageItem]="true"
+    (completedEvent)="onCompletion($event)"></app-homepage-item-one>
+    <app-homepage-item-two
+      [title]="'Homepage Item Two'"
+      [position]="{ columnNumber: 1, rowNumber: 2 }"
+      (completedEvent)="onCompletion($event)"></app-homepage-item-two>
+  </div>
+  <div sprkStackItem>
+    <app-homepage-item-three
+    [title]="'Homepage Item Three'"
+    [position]="{ columnNumber: 2, rowNumber: 1 }"
+    [isMainHomepageItem]="true"
+    (completedEvent)="onCompletion($event)"></app-homepage-item-three>
+    <app-homepage-item-four
+      [title]="'Homepage Item Four'"
+      [position]="{ columnNumber: 2, rowNumber: 2 }"
+      (completedEvent)="onCompletion($event)"></app-homepage-item-four>
+  </div>
+</sprk-stack>

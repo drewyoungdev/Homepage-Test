@@ -19,7 +19,7 @@ export class HomepageItemService {
     return of(true)
       .pipe(
         // delay(Math.floor(Math.random() * (10000 - 1000 + 1000)) + 1000)
-        delay(3000)
+        delay(500)
       );
   }
 
@@ -28,7 +28,7 @@ export class HomepageItemService {
     return of(true)
       .pipe(
         // delay(Math.floor(Math.random() * (10000 - 1000 + 1000)) + 1000)
-        delay(6000)
+        delay(1000)
       );
   }
 
@@ -38,7 +38,7 @@ export class HomepageItemService {
     return of(true)
       .pipe(
         // delay(Math.floor(Math.random() * (10000 - 1000 + 1000)) + 1000)
-        delay(2000)
+        delay(1500)
       );
   }
 
@@ -47,7 +47,7 @@ export class HomepageItemService {
     return of(true)
       .pipe(
         // delay(Math.floor(Math.random() * (10000 - 1000 + 1000)) + 1000)
-        delay(2000)
+        delay(500)
       );
   }
 }

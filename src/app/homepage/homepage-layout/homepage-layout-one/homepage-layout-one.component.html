@@ -1,0 +1,32 @@
+<div sprkStackItem>
+  <sprk-stack splitAt="tiny">
+    <div
+      sprkStackItem
+      style="padding-right:16px"
+      class="sprk-o-Stack__item--three-fifths@xs">
+      <app-homepage-item-one
+        [title]="'Homepage Item One'"
+        [position]="{ columnNumber: 1, rowNumber: 1 }"
+        [isMainHomepageItem]="true"
+        (completedEvent)="onCompletion($event)"></app-homepage-item-one>
+      <app-homepage-item-two
+        [title]="'Homepage Item Two'"
+        [position]="{ columnNumber: 1, rowNumber: 2 }"
+        (completedEvent)="onCompletion($event)"></app-homepage-item-two>
+    </div>
+    <div
+      sprkStackItem
+      style="padding-left:16px"
+      class="sprk-o-Stack__item--two-fifths@xs">
+      <app-homepage-item-three
+        [title]="'Homepage Item Three'"
+        [position]="{ columnNumber: 2, rowNumber: 1 }"
+        [isMainHomepageItem]="true"
+        (completedEvent)="onCompletion($event)"></app-homepage-item-three>
+      <app-homepage-item-four
+        [title]="'Homepage Item Four'"
+        [position]="{ columnNumber: 2, rowNumber: 2 }"
+        (completedEvent)="onCompletion($event)"></app-homepage-item-four>
+    </div>
+  </sprk-stack>
+</div>

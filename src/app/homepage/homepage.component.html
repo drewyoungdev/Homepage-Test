@@ -1,42 +1,41 @@
-<div [hidden]="!showPreloader">
-  <div class="preloader sprk-c-Spinner sprk-c-Spinner--circle sprk-c-Spinner--large sprk-c-Spinner--dark"></div>
-</div>
-<sprk-stack [hidden]="showPreloader">
-  <div sprkStackItem>
-    <h1 class="sprk-b-TypeDisplayTwo sprk-b-PageTitle sprk-u-mbl">
-      Your Dashboard
-    </h1>
+<sprk-stack>
+  <sprk-stack splitAt="tiny">
+    <div
+      sprkStackItem
+      class="sprk-o-Stack__item--three-fifths@xs"
+    >
+      <h1 class="sprk-b-TypeDisplayTwo sprk-b-PageTitle sprk-u-mbl">
+        Your Dashboard
+      </h1>
+    </div>
+    <div
+      sprkStackItem
+      class="sprk-o-Stack__item--two-fifths@xs"
+    >
+      <button
+        sprkButton
+        class="sprk-c-Button--tertiary sprk-u-mrs"
+        (click)="toggleLayout(1)">
+        Layout 1
+      </button>
+      <button
+        sprkButton
+        class="sprk-c-Button--tertiary sprk-u-mrs"
+        (click)="toggleLayout(2)">
+        Layout 2
+      </button>
+      <button
+        sprkButton
+        class="sprk-c-Button--tertiary sprk-u-mrs"
+        (click)="toggleLayout(3)">
+        Layout 3
+      </button>
+    </div>
+  </sprk-stack>
+
+  <div [hidden]="!showPreloader">
+    <div class="preloader sprk-c-Spinner sprk-c-Spinner--circle sprk-c-Spinner--large sprk-c-Spinner--dark"></div>
   </div>
-  <div sprkStackItem>
-    <sprk-stack splitAt="tiny">
-      <div
-        sprkStackItem
-        style="padding-right:16px"
-        class="sprk-o-Stack__item--three-fifths@xs">
-        <app-homepage-item-one
-          [title]="'Homepage Item One'"
-          [position]="{ columnNumber: 1, rowNumber: 1 }"
-          [isMainHomepageItem]="true"
-          (completedEvent)="onCompletion($event)"></app-homepage-item-one>
-        <app-homepage-item-two
-          [title]="'Homepage Item Two'"
-          [position]="{ columnNumber: 1, rowNumber: 2 }"
-          (completedEvent)="onCompletion($event)"></app-homepage-item-two>
-      </div>
-      <div
-        sprkStackItem
-        style="padding-left:16px"
-        class="sprk-o-Stack__item--two-fifths@xs">
-        <app-homepage-item-three
-          [title]="'Homepage Item Three'"
-          [position]="{ columnNumber: 2, rowNumber: 1 }"
-          [isMainHomepageItem]="true"
-          (completedEvent)="onCompletion($event)"></app-homepage-item-three>
-        <app-homepage-item-four
-          [title]="'Homepage Item Four'"
-          [position]="{ columnNumber: 2, rowNumber: 2 }"
-          (completedEvent)="onCompletion($event)"></app-homepage-item-four>
-      </div>
-    </sprk-stack>
-  </div>
+
+  <div [hidden]="showPreloader" #homepageContainer></div>
 </sprk-stack>
