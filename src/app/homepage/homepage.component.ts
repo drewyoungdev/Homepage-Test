@@ -25,7 +25,17 @@ export class HomepageComponent implements OnInit {
               private resolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
-    this.homepageLayoutService.getHomepageLayout()
+    this.loadHomepageLayout(1);
+  }
+
+  toggleLayout(layoutId) {
+    this.container.clear();
+    this.showPreloader = true;
+    this.loadHomepageLayout(layoutId);
+  }
+
+  loadHomepageLayout(layoutId: number) {
+    this.homepageLayoutService.getHomepageLayout(layoutId)
       .pipe(
         map(homepageLayout => {
           const factory = this.resolver.resolveComponentFactory(homepageLayout.component);

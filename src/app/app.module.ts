@@ -13,6 +13,8 @@ import { HomepageItemTwoComponent } from './homepage/homepage-item/homepage-item
 import { HomepageItemThreeComponent } from './homepage/homepage-item/homepage-item-three/homepage-item-three.component';
 import { HomepageItemFourComponent } from './homepage/homepage-item/homepage-item-four/homepage-item-four.component';
 import { HomepageLayoutOneComponent } from './homepage/homepage-layout/homepage-layout-one/homepage-layout-one.component';
+import { HomepageLayoutTwoComponent } from './homepage/homepage-layout/homepage-layout-two/homepage-layout-two.component';
+import { HomepageLayoutThreeComponent } from './homepage/homepage-layout/homepage-layout-three/homepage-layout-three.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomepageComponent }
@@ -21,8 +23,16 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+
+    // Homepage Entry Point
     HomepageComponent,
+
+    // Homepage Layouts
     HomepageLayoutOneComponent,
+    HomepageLayoutTwoComponent,
+    HomepageLayoutThreeComponent,
+
+    // Homepage Items within Layouts
     HomepageItemComponent,
     HomepageItemOneComponent,
     HomepageItemTwoComponent,
@@ -36,7 +46,9 @@ const appRoutes: Routes = [
     BrowserAnimationsModule
   ],
   entryComponents: [
-    HomepageLayoutOneComponent
+    HomepageLayoutOneComponent,
+    HomepageLayoutTwoComponent,
+    HomepageLayoutThreeComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

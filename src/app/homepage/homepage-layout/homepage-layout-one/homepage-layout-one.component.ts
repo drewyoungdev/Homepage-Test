@@ -7,7 +7,9 @@ import { HomepageLayoutComponent } from '../homepage-layout.component';
   templateUrl: './homepage-layout-one.component.html',
   styleUrls: ['./homepage-layout-one.component.scss']
 })
-export class HomepageLayoutOneComponent extends HomepageLayoutComponent implements HomepageLayout, OnInit {
+export class HomepageLayoutOneComponent
+  extends HomepageLayoutComponent
+  implements HomepageLayout, OnInit {
 
   constructor() {
     super()

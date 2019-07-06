@@ -1,6 +1,41 @@
-<div [hidden]="!showPreloader">
-  <div class="preloader sprk-c-Spinner sprk-c-Spinner--circle sprk-c-Spinner--large sprk-c-Spinner--dark"></div>
-</div>
-<sprk-stack [hidden]="showPreloader">
-  <div #homepageContainer></div>
+<sprk-stack>
+  <sprk-stack splitAt="tiny">
+    <div
+      sprkStackItem
+      class="sprk-o-Stack__item--three-fifths@xs"
+    >
+      <h1 class="sprk-b-TypeDisplayTwo sprk-b-PageTitle sprk-u-mbl">
+        Your Dashboard
+      </h1>
+    </div>
+    <div
+      sprkStackItem
+      class="sprk-o-Stack__item--two-fifths@xs"
+    >
+      <button
+        sprkButton
+        class="sprk-c-Button--tertiary sprk-u-mrs"
+        (click)="toggleLayout(1)">
+        Layout 1
+      </button>
+      <button
+        sprkButton
+        class="sprk-c-Button--tertiary sprk-u-mrs"
+        (click)="toggleLayout(2)">
+        Layout 2
+      </button>
+      <button
+        sprkButton
+        class="sprk-c-Button--tertiary sprk-u-mrs"
+        (click)="toggleLayout(3)">
+        Layout 3
+      </button>
+    </div>
+  </sprk-stack>
+
+  <div [hidden]="!showPreloader">
+    <div class="preloader sprk-c-Spinner sprk-c-Spinner--circle sprk-c-Spinner--large sprk-c-Spinner--dark"></div>
+  </div>
+
+  <div [hidden]="showPreloader" #homepageContainer></div>
 </sprk-stack>
