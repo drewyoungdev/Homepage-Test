@@ -12,6 +12,7 @@ import { HomepageItemOneComponent } from './homepage/homepage-item/homepage-item
 import { HomepageItemTwoComponent } from './homepage/homepage-item/homepage-item-two/homepage-item-two.component';
 import { HomepageItemThreeComponent } from './homepage/homepage-item/homepage-item-three/homepage-item-three.component';
 import { HomepageItemFourComponent } from './homepage/homepage-item/homepage-item-four/homepage-item-four.component';
+import { HomepageLayoutOneComponent } from './homepage/homepage-layout/homepage-layout-one/homepage-layout-one.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomepageComponent }
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomepageComponent,
+    HomepageLayoutOneComponent,
     HomepageItemComponent,
     HomepageItemOneComponent,
     HomepageItemTwoComponent,
@@ -32,6 +34,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     SparkModule,
     BrowserAnimationsModule
+  ],
+  entryComponents: [
+    HomepageLayoutOneComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

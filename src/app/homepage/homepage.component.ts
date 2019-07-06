@@ -1,18 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { HomepageItemCompletedEvent } from './models/homepage-item-completed-event';
+import { HomepageLayoutService } from './services/homepage-layout.service';
+import { map, finalize, catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 /*
 Summary
-Depending on the requirements this component may not have any logic.
-This component is here to ORCHESTRATE all of the homepage item components.
-We HAVE the option to pivot off of the triggered events to manage our homepage items if we decide.
-This parent component just gives us the flexibility to apply uniform handling of homepage items.
-For example:
- - Show the preloader until some condition is met by all homepage items
- - Highlight homepage item with red if hasError is true
- - Have specific Failure Reason Codes to apply generic styling to homepage item
- - Remove homepage item completely if hideHomepage returned as true.
- - etc. etc.
+Homepage layout component will be determined by homepage layout service.
+Once determined, it will load the corresponding component via the ComponentFactoryResolver
+The Factory will then be injected into the container tagged via the @ViewChild
 */
 @Component({
   selector: 'app-homepage',
@@ -22,32 +18,27 @@ For example:
 export class HomepageComponent implements OnInit {
   showPreloader: boolean = true;
 
-  // display preloader until at least "x" homepage items complete
-  completedHomepageItems: number = 0;
+  // container to render homepage layout within
+  @ViewChild('homepageContainer', { read: ViewContainerRef }) container;
 
-  // determine how many items must be loaded before preloader is hidden
-  requiredCompletedHomepageItems: number = 2;
-
-  constructor() { }
+  constructor(private homepageLayoutService: HomepageLayoutService,
+              private resolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
-  }
-
-  onCompletion($event: HomepageItemCompletedEvent) {
-    console.log($event);
-
-    // only hide preloader if modules tagged as main module have completed
-    // if ($event.isMainHomepageItem) {
-    //   this.completedHomepageItems++;
-    // }
-
-    // only hide preloader if all items in row 1 load
-    if ($event.position.rowNumber == 1) {
-      this.completedHomepageItems++;
-    }
-
-    if (this.completedHomepageItems >= this.requiredCompletedHomepageItems) {
-      this.showPreloader = false;
-    }
+    this.homepageLayoutService.getHomepageLayout()
+      .pipe(
+        map(homepageLayout => {
+          const factory = this.resolver.resolveComponentFactory(homepageLayout.component);
+          this.container.createComponent(factory);
+        }),
+        catchError(err => {
+          console.log(err);
+          return throwError(err);
+        }),
+        finalize(() => {
+          this.showPreloader = false;
+        })
+      )
+      .subscribe();
   }
 }
